@@ -13,7 +13,8 @@ The purpose of we make this repository is, we want to make a documentation and a
 
 One of my target is i want to learn about structure data, and they are include :
 
-- [ ] Array
+- [X] Array
 - [ ] Array multidimentional
+- [X] Heap/ object
 - [ ] Linked list
 - [ ] Tree 
