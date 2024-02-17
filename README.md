@@ -7,4 +7,10 @@ The purpose of we make this repository is, we want to make a documentation and a
 2. Every folder should be neat.
 3. Every important technique must be separate on every folder.
 
-## I believe you can do this mahesri. You're big boy now! DO your best.
+## I believe you can do this Mahesri. You're big boy now! Do your best.
+
+![keep-spirit-from-livia](assets/01-keep-spirit.jpg)
+
+One of my target is i want to learn about structure data, and they are include :
+
+[]
