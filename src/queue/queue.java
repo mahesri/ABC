@@ -29,6 +29,7 @@ public static void DEQUEUE (String antrian[]){
         }
         belakang = belakang -1; // Proses mengurangi jumlah antrian
     }
+    return;
 }
 
 public static void lihatAntrian(String antrian[]){
