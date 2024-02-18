@@ -40,4 +40,4 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Tree 
 - [ ] Hashing
 
-# Ini dulu semangat yok bisa!
+# You can do it! You have strength from him.
