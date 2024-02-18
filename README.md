@@ -16,5 +16,9 @@ One of my target is i want to learn about structure data, and they are include :
 - [X] Array
 - [ ] Array multidimentional
 - [X] Heap/ object
+
+### Searching 
+- [ ] Linear Search
+- [ ] Binary Search
 - [ ] Linked list
 - [ ] Tree 
