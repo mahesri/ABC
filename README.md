@@ -26,16 +26,18 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Selection Sort
 - [ ] Insertion Sort
 
+### [ ] STACK & QUEUE
+
 ### Linked list
 - [ ] Linked list
 - [ ] Pointer
 - [ ] Singgle Linked list
 - [ ] Double Linked list
 
+
+### -> 
 - [ ] Collection
-
 - [ ] Tree 
-
 - [ ] Hashing
 
 # Ini dulu semangat yok bisa!
