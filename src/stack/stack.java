@@ -10,7 +10,7 @@ public class stack {
 		System.out.println("Maaf, Tumpukan penuh, PUSH "+data+" tidak dapat dilakukan");
 
 	}else{ //Ketika tumpukan tidak penuh!
-		atas = atas + 1;
+		atas = atas + 1; // saat ini atas memiliki nilai 0
 		tumpukan[atas] = data;
 		System.out.println("PUSH " + data + " berhasil..");
 	}
@@ -32,7 +32,7 @@ public static void POP (String tumpukan[]){ // POP Fungsi untuk menghaspus
 public static void LihatTumpukan(String tumpukan[]){
 	System.out.println(" ");
 	System.out.println("--TUMPUKAN--");
-	for(int i = atas;i>= 0-1; i--){
+	for(int i = atas;i>= 0; i--){
 		System.out.println(tumpukan[i]);
 	}
 	System.out.println("--akhir tumpukan-");
@@ -50,9 +50,28 @@ public static void LihatTumpukan(String tumpukan[]){
 		tumpukan[6] = new String();
 		tumpukan[7] = new String();
 		tumpukan[8] = new String();
-		tumpukan[9] = new String();
-		PUSH (tumpukan, "BUKU A"); //Baru tau gue kalau bisa masukan data kedalam aray dengan model yang kek gini
-		LihatTumpukan(tumpukan);
+		tumpukan[9] = new String();	
+		
+										// Apa yang bisa aku pahami dari praktik 1 dan fungsi 'PUSH'.
+		PUSH (tumpukan, "BUKU A"); // cara berikut merupakan cara untuk memasukan sebuah data kedalam array
+		PUSH (tumpukan, "BUKU B"); // yang lebih simpel dan ringkas, efisien, dan mudah dibaca.
+		PUSH (tumpukan, "BUKU C"); // 'PUSH' merupakan fungsi untuk memasukan data kedalam array, 
+		PUSH (tumpukan, "BUKU D"); PUSH (tumpukan, "BUKU F"); PUSH (tumpukan, "BUKU G"); PUSH (tumpukan, "BUKU H"); // 'tumpukan' merupakan array yang akan dimanipulasi.
+		LihatTumpukan(tumpukan);		// 'BUKU A' merupakan data yang akan dimasukan kedalam array tumpukan.
 	}
 
 	}
+
+	/*
+	 * Praktik 1 Mencoba memasukan 5 buku kedalam tumpukan.
+	 * Semua buku berhasil dipush kedalam tumpukan.
+	 * Dan didalam praktik pertama 'atas' berada pada index ke-4 dalam array tumpukan.
+	 */ 
+
+	 /*
+	  * Praktik 2 Ditambahkan lagi 3 buku namun karena sebelumnya sudah memasukan 4 buku
+	  * dan sementara jumlah tumpukan dibatasi hanya sampai 5, maka ke buku ke-5 bermasil masuk
+	  * yakni 'buku F' dan ke-6 dan ke-7 akan ditolak karena tumpukan sudah penuh. 
+	  */
+
+
