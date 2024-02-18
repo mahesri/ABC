@@ -16,5 +16,26 @@ One of my target is i want to learn about structure data, and they are include :
 - [X] Array
 - [ ] Array multidimentional
 - [X] Heap/ object
+
+### Searching 
+- [X] Linear Search
+- [ ] Binary Search
+
+### Sorting
+- [ ] Bubbel Sort
+- [ ] Selection Sort
+- [ ] Insertion Sort
+
+### Linked list
 - [ ] Linked list
+- [ ] Pointer
+- [ ] Singgle Linked list
+- [ ] Double Linked list
+
+- [ ] Collection
+
 - [ ] Tree 
+
+- [ ] Hashing
+
+# Ini dulu semangat yok bisa!
