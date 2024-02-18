@@ -1,6 +1,6 @@
-package queue;
+package stack;
 
-public class queue {
+public class stack {
 	public static int N = 5;
 	public static int atas = -1; // atas adalah variable untuk sebagai acuan dirurtan keberapa antrian tersebut berada
 
