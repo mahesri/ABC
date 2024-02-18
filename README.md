@@ -26,7 +26,9 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Selection Sort
 - [ ] Insertion Sort
 
-### [ ] STACK & QUEUE
+### -> Ot Section
+- [ ] Stack
+- [ ] Queue
 
 ### Linked list
 - [ ] Linked list
@@ -35,7 +37,7 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Double Linked list
 
 
-### -> 
+### -> Ot Section
 - [ ] Collection
 - [ ] Tree 
 - [ ] Hashing
