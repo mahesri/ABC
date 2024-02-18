@@ -27,7 +27,7 @@ One of my target is i want to learn about structure data, and they are include :
 - [X] Insertion Sort
 
 ### -> Ot Section
-- [ ] Stack
+- [X] Stack
 - [ ] Queue
 
 ### Linked list
