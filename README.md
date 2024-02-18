@@ -19,12 +19,12 @@ One of my target is i want to learn about structure data, and they are include :
 
 ### Searching 
 - [X] Linear Search
-- [ ] Binary Search
+- [X] Binary Search
 
 ### Sorting
-- [ ] Bubbel Sort
-- [ ] Selection Sort
-- [ ] Insertion Sort
+- [X] Bubbel Sort
+- [X] Selection Sort
+- [X] Insertion Sort
 
 ### -> Ot Section
 - [ ] Stack
