@@ -19,12 +19,16 @@ One of my target is i want to learn about structure data, and they are include :
 
 ### Searching 
 - [X] Linear Search
-- [ ] Binary Search
+- [X] Binary Search
 
 ### Sorting
-- [ ] Bubbel Sort
-- [ ] Selection Sort
-- [ ] Insertion Sort
+- [X] Bubbel Sort
+- [X] Selection Sort
+- [X] Insertion Sort
+
+### -> Ot Section
+- [ ] Stack
+- [ ] Queue
 
 ### Linked list
 - [ ] Linked list
@@ -32,10 +36,10 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Singgle Linked list
 - [ ] Double Linked list
 
+
+### -> Ot Section
 - [ ] Collection
-
 - [ ] Tree 
-
 - [ ] Hashing
 
-# Ini dulu semangat yok bisa!
+# You can do it! You have strength from him.
