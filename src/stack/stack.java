@@ -2,7 +2,7 @@ package stack;
 
 public class stack {
 	public static int N = 5;
-	public static int atas = -1; // atas adalah variable untuk sebagai acuan dirurtan keberapa antrian tersebut berada
+	public static int atas = -1; // atas adalah variable untuk sebagai acuan diberapa tumpukan 'variable atas' tersebut berada
 
 	public static void PUSH(String tumpukan[], String data){ // 'String tumpukan[], String data' dalam
 															 //  fungsi ini adalah "parameter formal" 
