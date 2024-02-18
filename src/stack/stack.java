@@ -41,6 +41,18 @@ public static void LihatTumpukan(String tumpukan[]){
 
 	public static void main(String[]args){
 		String tumpukan[] = new String[10];
+		tumpukan[0] = new String();
+		tumpukan[1] = new String();
+		tumpukan[2] = new String();
+		tumpukan[3] = new String();
+		tumpukan[4] = new String();
+		tumpukan[5] = new String();
+		tumpukan[6] = new String();
+		tumpukan[7] = new String();
+		tumpukan[8] = new String();
+		tumpukan[9] = new String();
+		PUSH (tumpukan, "BUKU A"); //Baru tau gue kalau bisa masukan data kedalam aray dengan model yang kek gini
+		LihatTumpukan(tumpukan);
 	}
 
 	}
