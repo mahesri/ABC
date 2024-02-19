@@ -56,9 +56,14 @@ public static void LihatTumpukan(String tumpukan[]){
 		PUSH (tumpukan, "BUKU A"); // cara berikut merupakan cara untuk memasukan sebuah data kedalam array
 		PUSH (tumpukan, "BUKU B"); // yang lebih simpel dan ringkas, efisien, dan mudah dibaca.
 		PUSH (tumpukan, "BUKU C"); // 'PUSH' merupakan fungsi untuk memasukan data kedalam array, 
-		PUSH (tumpukan, "BUKU D"); PUSH (tumpukan, "BUKU F"); PUSH (tumpukan, "BUKU G"); PUSH (tumpukan, "BUKU H"); POP(tumpukan); POP(tumpukan); POP(tumpukan); // 'tumpukan' merupakan array yang akan dimanipulasi.
-		LihatTumpukan(tumpukan);		// 'BUKU A' merupakan data yang akan dimasukan kedalam array tumpukan.
-	}
+		PUSH (tumpukan, "BUKU D"); // 'tumpukan' merupakan array yang akan dimanipulasi.
+		PUSH (tumpukan, "BUKU F");	// 'BUKU A' merupakan data yang akan dimasukan kedalam array tumpukan.
+		PUSH (tumpukan, "BUKU G");
+		PUSH (tumpukan, "BUKU H");
+		POP(tumpukan); 
+		POP(tumpukan);
+		POP(tumpukan);
+		LihatTumpukan(tumpukan);		}
 
 	}
 
@@ -78,11 +83,11 @@ public static void LihatTumpukan(String tumpukan[]){
 	  /*
 	   * Praktik ke-3 merupakan praktik untuk menghapus / POP tumpukan dan dengan ini
 	   * Maka ditambahkan fungsi pop kedalam main utama Karena data atas sebelumnya diisi indek ke-4 dan
-	   * pada index tersebut diisi oleh BUKU F yang sebelumnya dimasukan di praktik 2 
+	   * pada index tersebut diisi oleh BUKU F yang sebelumnya dimasukan di praktik 2.
 	   */
 
 	   /*
 		* Pada praktik ke-4 ditambahkan 2 fungsi POP kedalam main utama, dengan ini jika sebelumnya
 		* tumpukan yang terhapus merupakan 'BUKU F' maka dengan ditambahkannya 2 POP BUKU C dan D juga akan
-		* Terhapus
+		* Terhapus.
 	    */
