@@ -1,7 +1,5 @@
 package stack;
 
-import java.util.Stack;
-
 class tumpukan {
     private int array[];
     private int atas = -1; // to count index of the entry
@@ -15,9 +13,44 @@ class tumpukan {
     }
 }
 
+void POP(){
+if(atas == -1){ // If the Stack is emty
+    System.out.println("Tumpukan kosong!");
+}else{
+    array[atas--] = 0;
+}
+}
+
+void printStack(){
+    System.out.print("[ ");
+    for(int i=0; i<=atas;i++){
+        System.out.print(array[i]+",");
+    }
+System.out.println("\b ]");
+}
+
 }
 
 public class stack2 {
     
+    public static void main(String[]args){
+
+        tumpukan s = new tumpukan(3); //Stack size
+        s.printStack();
+        s.POP();
+        s.printStack();
+        s.PUSH(10);
+        s.printStack();
+        s.PUSH(20);
+        s.printStack();
+        s.POP();
+        s.printStack();
+        s.PUSH(50);
+        s.printStack();
+        s.PUSH(40);
+        s.printStack();
+
+
+    }
     
 }
