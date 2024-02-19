@@ -1,8 +1,10 @@
 package stack;
 
 class tumpukan {
+   
     private int array[];
     private int atas = -1; // to count index of the entry
+    
     tumpukan(int ukuran){array = new int[ukuran];}
 
     void PUSH(int n){ // Function to add data
@@ -11,31 +13,30 @@ class tumpukan {
     }else{
         array[++atas] = n;
     }
-}
+    }
 
-void POP(){
-if(atas == -1){ // If the Stack is emty
+    void POP(){
+    if(atas == -1){ // If the Stack is emty
     System.out.println("Tumpukan kosong!");
-}else{
+    }else{
     array[atas--] = 0;
-}
-}
+    }
+    }
 
-void printStack(){
+    void printStack(){
     System.out.print("[ ");
-    for(int i=0; i<=atas;i++){
+    for(int i=0; i<= atas ; i++){
         System.out.print(array[i]+",");
     }
-System.out.println("\b ]");
-}
-
-}
+    System.out.println("\b ]");
+    }   
+    }
 
 public class stack2 {
     
     public static void main(String[]args){
 
-        tumpukan s = new tumpukan(3); //Stack size
+        tumpukan s = new tumpukan(3); // 3 Stack size
         s.printStack();
         s.POP();
         s.printStack();
