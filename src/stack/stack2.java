@@ -23,6 +23,7 @@ class tumpukan {
     }
     }
 
+
     void printStack(){
     System.out.print("[ ");
     for(int i=0; i<= atas ; i++){
@@ -31,6 +32,7 @@ class tumpukan {
     System.out.println("\b ]");
     }   
     }
+    
 
 public class stack2 {
     
