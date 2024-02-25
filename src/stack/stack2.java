@@ -5,11 +5,11 @@ class tumpukan {
     private int array[];
     private int atas = -1; // to count index of the entry
     
-    tumpukan(int ukuran){
+    tumpukan(int ukuran){ // It is a constructor to declare number index of the array is based by "ukuran"
         array = new int[ukuran];
     }
 
-    void PUSH(int n){ // Function to add data
+    void PUSH(int n){ // Function to add data // but it is a instance method from the object "tumpukan" so the method don't need "static" and also "public"
     if(atas == array.length-1){
         System.out.println("Tumpukan penuh!");
     }else{
