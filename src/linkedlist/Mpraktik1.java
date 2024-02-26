@@ -23,3 +23,7 @@ public static void main(String[]args){
 
 		}
 		}
+
+		/*
+		Bagaimana Pointer P dapat menunjuk ke 'null'? | jawaban : dengan mendekelarasikannya "P = null;s"
+		 */
