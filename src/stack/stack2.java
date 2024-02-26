@@ -5,7 +5,9 @@ class tumpukan {
     private int array[];
     private int atas = -1; // to count index of the entry
     
-    tumpukan(int ukuran){array = new int[ukuran];}
+    tumpukan(int ukuran){
+        array = new int[ukuran];
+    }
 
     void PUSH(int n){ // Function to add data
     if(atas == array.length-1){
@@ -52,6 +54,11 @@ public class stack2 {
         s.printStack();
         s.PUSH(40);
         s.printStack();
+        s.POP();
+        s.printStack();
+        s.PUSH(60);
+        s.printStack();
+
 
 
     }
