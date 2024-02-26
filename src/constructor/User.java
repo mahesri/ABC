@@ -26,7 +26,7 @@ public class User {
 class DemoConstructor{
     public static void main(String[]args){
 
-     User MacbookAir = new User("Mahesta Riyadi Putranto", "maindfullness");
+     User MacbookAir = new User("Mahesta Riyadi Putranto", "Mindfullness");
      System.out.println("Username : " + MacbookAir.username);
      System.out.println("Password : " + MacbookAir.password);
 
