@@ -43,17 +43,30 @@ R.kanan = S;
 S.kanan = T;
 T.kanan = null;
 
-System.out.println("");
-System.out.println("Nilai-nilai yang dapat diakses dari pointer P adalah :");
-System.out.println(P.namaKota); //Yogyakarta
-System.out.println(P.kanan.namaKota);//Klaten
-System.out.println(P.kanan.kanan.namaKota);//Solo
-System.out.println(P.kanan.kanan.kanan.namaKota);//Sragen
-System.out.println(P.kanan.kanan.kanan.kanan.namaKota);//Ngawi
+// System.out.println("");
+// System.out.println("Nilai-nilai yang dapat diakses dari pointer P adalah :");
+// System.out.println(P.namaKota); //Yogyakarta
+// System.out.println(P.kanan.namaKota);//Klaten
+// System.out.println(P.kanan.kanan.namaKota);//Solo
+// System.out.println(P.kanan.kanan.kanan.namaKota);//Sragen
+// System.out.println(P.kanan.kanan.kanan.kanan.namaKota);//Ngawi
 
 /*
- * Kesimpulan dari Percabaan ini kita dapat mengakses heap dari pointer lain dengan pionter yang dikaitkan didalam pointer tersebut.  
+ * Kesimpulan dari Percabaan ini kita dapat mengakses heap dari 
+ * pointer lain dengan pionter yang dikaitkan didalam pointer tersebut.  
  */
+
+ thePointer BANTU;
+ BANTU = P;
+ 
+System.out.println();
+ while (BANTU!=null) {
+   System.out.println("Nilai BANTU.namaKota adalah "+BANTU.namaKota);
+   BANTU = BANTU.kanan;
+ }
+
+ 
+
 
 }    
 }
