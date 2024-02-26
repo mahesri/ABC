@@ -2,7 +2,7 @@ package linkedlist;
 
 class thePointer{
    String namaKota;
-   myPointer kanan;
+   thePointer kanan;
 }
 
 
@@ -39,16 +39,21 @@ System.out.println("Nilai T.namaKota adalah = "+T.namaKota);
 
 P.kanan = Q;
 Q.kanan = R;
-R.kanan = T;
-T.kanan = S;
-S.kanan = null;
+R.kanan = S;
+S.kanan = T;
+T.kanan = null;
 
+System.out.println("");
 System.out.println("Nilai-nilai yang dapat diakses dari pointer P adalah :");
 System.out.println(P.namaKota); //Yogyakarta
 System.out.println(P.kanan.namaKota);//Klaten
 System.out.println(P.kanan.kanan.namaKota);//Solo
 System.out.println(P.kanan.kanan.kanan.namaKota);//Sragen
 System.out.println(P.kanan.kanan.kanan.kanan.namaKota);//Ngawi
+
+/*
+ * Kesimpulan dari Percabaan ini kita dapat mengakses heap dari pointer lain dengan pionter yang dikaitkan didalam pointer tersebut.  
+ */
 
 }    
 }
