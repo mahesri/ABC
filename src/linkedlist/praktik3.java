@@ -2,6 +2,7 @@ package linkedlist;
 
 class thePointer{
    String namaKota;
+   thePointer kiri;
    thePointer kanan;
 }
 
@@ -43,29 +44,68 @@ R.kanan = S;
 S.kanan = T;
 T.kanan = null;
 
-// System.out.println("");
-// System.out.println("Nilai-nilai yang dapat diakses dari pointer P adalah :");
-// System.out.println(P.namaKota); //Yogyakarta
-// System.out.println(P.kanan.namaKota);//Klaten
-// System.out.println(P.kanan.kanan.namaKota);//Solo
-// System.out.println(P.kanan.kanan.kanan.namaKota);//Sragen
-// System.out.println(P.kanan.kanan.kanan.kanan.namaKota);//Ngawi
+// Manipulasi linkedlist 1
+
+System.out.println("");
+System.out.println("MANIPULASI LINKEDLIST 1");
+System.out.println("");
+System.out.println("Nilai-nilai yang dapat diakses dari pointer P adalah :");
+System.out.println(P.namaKota); //Yogyakarta
+System.out.println(P.kanan.namaKota);//Klaten
+System.out.println(P.kanan.kanan.namaKota);//Solo
+System.out.println(P.kanan.kanan.kanan.namaKota);//Sragen
+System.out.println(P.kanan.kanan.kanan.kanan.namaKota);//Ngawi
 
 /*
  * Kesimpulan dari Percabaan ini kita dapat mengakses heap dari 
  * pointer lain dengan pionter yang dikaitkan didalam pointer tersebut.  
  */
 
+ // Manipulasi linkedlist 2
+ System.out.println("");
+ System.out.println("MANIPULASI LINKEDLIST 2");
+ System.out.println("");
+
  thePointer BANTU;
  BANTU = P;
- 
-System.out.println();
+
  while (BANTU!=null) {
    System.out.println("Nilai BANTU.namaKota adalah "+BANTU.namaKota);
    BANTU = BANTU.kanan;
  }
 
+ /*
+  * Catatan : Iterasi While dalam program diatas mengekesekusi sebanyak 5 kali
+  * Hasil Output setiap iterasi berbeda, hal ini karena sebelumnya sudah dideklarasikan bahwa Pointer P.kanan = Q dan Q.kanan = R dan seterusnya sampai S.kanan = Null yang mana dalam iterasi kelima T.kanan = Null karena while hanya akan mengeksekusi apabila BANTU.kanan tidak sama dengan null maka diiterasi ke 5 while berhenti  
+  */
  
+// Manipulasi linkedlist 3
+ 
+P.kiri = null;
+Q.kiri = P;
+R.kiri = Q;
+S.kiri = R;
+T.kiri = S;
+
+BANTU = T;
+
+System.out.println("");
+System.out.println("MANIPULASI LINKEDLIST 3");
+System.out.println("");
+
+System.out.println("Elemen namaKota untuk pointer P adalah :");
+System.out.println("----------------------------------------");
+System.out.println(P.namaKota);
+System.out.println(P.kanan.kiri.namaKota);// Output akan menjadi Yogyakarta
+System.out.println(P.kanan.kanan.kiri.kiri.namaKota); //Output juga sama Yogyakarta
+
+
+while (BANTU!=null) {
+  System.out.println("Nilai BANTU.namaKota adalah "+BANTU.namaKota);
+  BANTU = BANTU.kiri;
+}
+
+
 
 
 }    
