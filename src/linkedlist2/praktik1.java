@@ -17,7 +17,6 @@ public class praktik1 {
 
     public static simpul awal;
     public static simpul akhir;
-    public static Scanner in = new Scanner(System.in);
 
     public static void inisialisasiSenaraiKosong(){
         awal = null;
@@ -35,6 +34,7 @@ public class praktik1 {
         String HOBI[] = new String[3];
         float IPK;
         int bacaTombol = 0;
+        Scanner in = new Scanner(System.in);
 
         System.out.println("TAMBAH DEPAN : ");
         System.out.print("Silahkan masukan nama Anda : ");
@@ -48,7 +48,7 @@ public class praktik1 {
             bacaTombol = System.in.read();
         }catch(java.io.IOException e){}
         JEKEL = (char)bacaTombol;
-        System.out.print("Silahkan masukan hobi Anda : ");
+        System.out.println("Silahkan masukan hobi Anda : ");
         for(int i = 0;i<=3-1;i++){
             System.out.print("hobi ke-"+i+" : ");
             HOBI[i] = in.next();
@@ -83,11 +83,38 @@ public class praktik1 {
 
     }
 
+    public static void cetakSenarai(){
+       
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = awal;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                for(int i = 0;i<=3-1;i++){
+                    System.out.print(bantu.hobi[i] +"\t ");
+                }
+                System.out.print(bantu.ipk +"\t ");
+                bantu = bantu.kanan;
+            }
+
+        }
+    }
+
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
-        tambahDepan();
-        tambahDepan();
+        cetakSenarai();
 
     }
 }
