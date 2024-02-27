@@ -27,12 +27,13 @@ One of my target is i want to learn about structure data, and they are include :
 - [X] Insertion Sort
 
 ### -> Ot Section
+- [X] Constructor
 - [X] Stack
 - [ ] Queue
 
 ### Linked list
-- [ ] Linked list
-- [ ] Pointer
+- [X] Linked list
+- [X] Pointer
 - [ ] Singgle Linked list
 - [ ] Double Linked list
 
