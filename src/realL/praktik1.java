@@ -1,8 +1,8 @@
-package linkedlist2;
+package realL;
 
 import java.util.Scanner;
 
-class simpul {
+class simpul{
     String nama;
     String alamat;
     int umur;
@@ -11,22 +11,22 @@ class simpul {
     float ipk;
     simpul kanan;
 }
- 
 
 public class praktik1 {
 
     public static simpul awal;
     public static simpul akhir;
+    public static Scanner in = new Scanner(System.in);
 
     public static void inisialisasiSenaraiKosong(){
-        awal = null;
-        akhir = null;
+     awal = null;
+     akhir = null;   
     }
 
+    /**
+     * PAAN DAH!
+     */
     public static void tambahDepan(){
-
-        //Bagian entry data dari keyboard
-
         String NAMA;
         String ALAMAT;
         int UMUR;
@@ -34,9 +34,7 @@ public class praktik1 {
         String HOBI[] = new String[3];
         float IPK;
         int bacaTombol = 0;
-        Scanner in = new Scanner(System.in);
 
-        System.out.println("TAMBAH DEPAN : ");
         System.out.print("Silahkan masukan nama Anda : ");
         NAMA = in.next();
         System.out.print("Silahkan masukan alamat Anda : ");
@@ -48,43 +46,39 @@ public class praktik1 {
             bacaTombol = System.in.read();
         }catch(java.io.IOException e){}
         JEKEL = (char)bacaTombol;
-        System.out.println("Silahkan masukan hobi Anda : ");
-        for(int i = 0;i<=3-1;i++){
+
+        System.out.println("Silahkan masukan hobi Anda maks-3");
+        for(int i = 0; i <= 3-1;i++){
             System.out.print("hobi ke-"+i+" : ");
             HOBI[i] = in.next();
         }
-        System.out.print("Silahkan masukan IPK Anda : ");
-        IPK = in.nextInt();
 
-        //Bagian menciptakan dan mengisi simpul baru
+        System.out.print("Silahkan masukan IPK Anda : ");
+        IPK = in.nextFloat();
 
         simpul baru;
         baru = new simpul();
 
         baru.nama = NAMA;
-        baru.alamat  = ALAMAT;
+        baru.alamat = ALAMAT;
         baru.umur = UMUR;
         baru.jekel = JEKEL;
-        for(int i = 0;i<=3-1;i++){
+        for(int i=0;i<=3-1;i++){
             baru.hobi[i] = HOBI[i];
         }
         baru.ipk = IPK;
 
-        //Bagian mencangkokan simpul baru ke dalam simpul lama
-        
-        if (awal == null) { // Apabila senarai kosong sama seperti saat awal program dieksekusi
+        if (awal == null) {
             awal = baru;
             akhir = baru;
             baru.kanan = null;
-        }else{              // Apabila senarai tidak kosong.
+        }else{
             baru.kanan = awal;
             awal = baru;
         }
-
     }
 
     public static void cetakSenarai(){
-       
         if(awal == null){ //Jika senarai masih kosong
             System.out.println("Maaf senarai masih kosong!");
         }else{ // jika senarai tidak kosong
@@ -114,7 +108,7 @@ public class praktik1 {
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
+        tambahDepan();
         cetakSenarai();
-
     }
 }
