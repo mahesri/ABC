@@ -73,6 +73,15 @@ public class praktik1 {
             baru.kanan = awal;
             awal = baru;
         }
+
+            /*
+             * 1. Langkah pertama adalah 'awal' selalu 'null' dan data akan disimpan di 'awal' maupun 'akhir'
+             * 2. Pemanggilan fungsi tambahDepan kedua akan membuat 'baru.kanan' yang sebelumnya 'null' menjadi 'awal' || Kalau 'awal != null'
+             * 3. Pemanggilan fungsi tambahDepan ketiga akan berlangsung sama dengan langkah ke-2.
+             * 
+             * Sebuah heap meskipun memiliki nama objek yang sama, apabila dideklarasikan 2 kali tetap akan menjadi 2 heap yang berbeda. 
+             * 
+             */
     }
 
     public static void tambahBelakang(){
@@ -118,20 +127,24 @@ public class praktik1 {
         }
         baru.ipk = IPK;
 
+        // The most important thing that we need to understand
+
         if (awal == null) {
             awal = baru;
             akhir = baru;
             baru.kanan = null;
         }else{
+            akhir.kanan = baru; //akhir sebelumnya diisi dengan data pertama yang diinputkan
             akhir = baru;
-            baru.kanan = awal;
+            baru.kanan = null;
+
         }    
     }
 
     public static void cetakSenarai(){
         if(awal == null){ //Jika senarai masih kosong
             System.out.println("Maaf senarai masih kosong!");
-        }else{ // jika senarai tidak kosong
+        }else{ // jika senarai tidak kosongk
 
             System.out.println("---------------------------------------------------");
             System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
@@ -151,6 +164,9 @@ public class praktik1 {
                 System.out.println(bantu.ipk +"\t ");
                 bantu = bantu.kanan;
             }
+
+            System.out.println("---------------------------------------------------");
+
 
         }
     }
