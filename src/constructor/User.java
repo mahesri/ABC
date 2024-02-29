@@ -26,7 +26,7 @@ public class User {
 class DemoConstructor{
     public static void main(String[]args){
 
-     User MacbookAir = new User("Mahesta Riyadi Putranto", "Mindfullness");
+     User MacbookAir = new User("Livia", "Mindfullness");
      System.out.println("Username : " + MacbookAir.username);
      System.out.println("Password : " + MacbookAir.password);
 
@@ -44,7 +44,7 @@ class DemoConstructor{
  * Tambahan Catatan dari chat gpt :
  * Ketika Anda membuat objek MacbookAir menggunakan konstruktor User, konstruktor tersebut akan dieksekusi. Pada bagian this.username = username; dan this.password = password;, this merujuk kepada variabel anggota (instance variables) dari objek yang sedang dibuat.
 
-Jadi, ketika Anda memanggil konstruktor User("Mahesta Riyadi Putranto", "maindfullness"), nilai "Mahesta Riyadi Putranto" akan diset sebagai nilai dari username dan nilai "maindfullness" akan diset sebagai nilai dari password. Dengan demikian, MacbookAir.username akan memiliki nilai "Mahesta Riyadi Putranto" dan MacbookAir.password akan memiliki nilai "maindfullness".
+Jadi, ketika Anda memanggil konstruktor User("Livia", "maindfullness"), nilai "Livia" akan diset sebagai nilai dari username dan nilai "maindfullness" akan diset sebagai nilai dari password. Dengan demikian, MacbookAir.username akan memiliki nilai "Livia" dan MacbookAir.password akan memiliki nilai "maindfullness".
 
 Jadi, konstruktor menginisialisasi variabel anggota objek dengan nilai-nilai yang diberikan saat pembuatan objek.
  */
