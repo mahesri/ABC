@@ -17,8 +17,8 @@ public class Praktik3 {
         daftarMhs.add("Sinta");
         daftarMhs.add("Warjo");
         daftarMhs.add("Laras");
-        System.out.println(daftarMhs.get(0));
-        System.out.println(daftarMhs.get(1));
+        System.out.println(daftarMhs.get(0)); // 'get()' adalah method yang sering digunakan untuk mendapatkan sebuahelemen 
+        System.out.println(daftarMhs.get(1));  // berdasarkan index, dari sebuah list, aray atau linkedlist
         System.out.println(daftarMhs.get(2));
         System.out.println(daftarMhs.get(3));
         System.out.println(daftarMhs.get(4));
