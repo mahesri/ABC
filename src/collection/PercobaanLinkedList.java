@@ -24,7 +24,7 @@ public class PercobaanLinkedList {
         daftarMhs.add("Sinta");
         daftarMhs.add("Warjo");
         daftarMhs.add("Laras");
-        System.out.println();
+        System.out.println(daftarMhs.get(0));
 
         if(daftarMhs.isEmpty() == true){ 
 
