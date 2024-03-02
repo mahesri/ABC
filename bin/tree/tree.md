@@ -10,5 +10,5 @@ Tree(binary tree) adalah pohon dimana setiap simpulnya (node) hanya boleh memili
 
 Simpul(node) :
 - Simpul anak (children) hanya boleh punya 1 <i>parent</i>
-- Simpul orang tua (<i>parrent<i>) hanya boleh punya <b>maksimal<b> 2 anak, namun boleh juga tidak punya anak
+- Simpul orang tua (<i>parrent</i>) hanya boleh punya <b>maksimal</b> 2 anak, namun boleh juga tidak punya anak
 
