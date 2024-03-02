@@ -4,13 +4,19 @@ import java.util.LinkedList;
 
 public class latihan {
 
-    public static int Integer;
-    public static float Float = 0;
-    public static long Long = 0;
+    LinkedList daftarMhs = new LinkedList();
     
-    LinkedList list = new LinkedList<int>();
+    latihan(){  // A Constructor
 
-    public static void main(String[]args){
-        list.add(new Integer(10));
+       daftarMhs.add(new Integer(10));
+       daftarMhs.add(new Float(10));
+       daftarMhs.add(new Long(10));
     }
-} 
+
+    public static void main(String args[]){
+
+    new latihan();     
+
+    }
+
+}
