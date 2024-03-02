@@ -2,11 +2,11 @@ package collection;
 
 import java.util.LinkedList;
 
-public class Praktik7 {
+public class Praktik8 {
 
     LinkedList daftarMhs = new LinkedList();
     
-    Praktik7(){  // A Constructor
+    Praktik8(){  // A Constructor
 
         daftarMhs.add("Livia");
         daftarMhs.add("Intan");
@@ -17,7 +17,7 @@ public class Praktik7 {
         daftarMhs.add("Sinta");
         daftarMhs.add("Warjo");
         daftarMhs.add("Laras");
-        System.out.println("");
+       
         System.out.println("N = " + daftarMhs.size()); // 'size()' adalah method untuk mengetahui index elemen dari Linkedlist
 
         for(int i = 0; i <= daftarMhs.size()-1;i++){
@@ -26,18 +26,15 @@ public class Praktik7 {
         }
         System.out.println(" ");
 
-        daftarMhs.set(5, "Lestari"); // 'set()' merupakan method untuk men-set atau secara harfiah mengatur data dalam suatu elemen
+        System.out.println(daftarMhs.contains("Mahes")); // Contains akan mengecek suatu collection atau "daftarMhs" apabila terdapat data "Mahes" maka akan bernilai true, sementara jika false maka data tidak ditemukan.
+        System.out.println("Mahes berada di Index ke-" + daftarMhs.indexOf("Mahes")); // method 'indexOf()' secara umum akan mengetahuiindex suatu data
 
-        for(int i = 0; i <= daftarMhs.size()-1;i++){
-            System.out.printf(i+1+" ");
-            System.out.print(daftarMhs.get(i)+"\n");
-        }
         System.out.println(" ");
     }
 
     public static void main(String args[]){
 
-    new Praktik7();     
+    new Praktik8();     
 
     }
 
