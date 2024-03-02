@@ -270,24 +270,44 @@ public class praktik1 {
         String namaCari = in.next();
 
         if(awal ==  akhir) { //Jika hanya ada sebuah simpul
+           
             if(awal.nama.equals(namaCari)){
                 System.out.println("menghapus "+namaCari+" dilakukan");
             }else
             System.out.println("data "+namaCari+" tidak ditemukan!");
+       
         }else if (awal.nama.equals(namaCari)) { // jika nama ditemukan diawal
+           
             System.out.println("menghapus "+namaCari+" dilakukan");
             awal = awal.kanan;
+       
         }else{
-         simpul bantu;
+        
+            simpul bantu;
          bantu = awal;
-         while(bantu.kanan.nama.equals(namaCari) == false){
-            bantu = bantu.kanan;
-         }
          
+         while(bantu.kanan.nama.equals(namaCari) == false){
+           
+            bantu = bantu.kanan;
+            if(bantu.kanan == null) break;
+            
+         }
 
+         if((bantu == akhir) && (akhir.nama.equals(namaCari) == false)){
+            
+            System.out.println("data "+namaCari+" tidak ditemukan!");
+         }else if (akhir.nama.equals(namaCari)) { // jika nama tidak sitemukan diakhir
+           
+            bantu.kanan = null;
+            akhir = bantu;
+
+         }else{
+
+            System.out.println("menghapus "+namaCari+" dilakukan");
+            bantu.kanan = bantu.kanan.kanan;
+         }
         }
      }
-    
     } 
 
     public static void main(String[]args){
@@ -300,7 +320,8 @@ public class praktik1 {
         tambahBelakang();
         tambahBelakang();
         tambahBelakang();
-        tambahTengah();
+        // tambahTengah();
+        hapus();
         cetakSenarai();
     }
 }
