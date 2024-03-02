@@ -171,14 +171,136 @@ public class praktik1 {
         }
     }
 
+    public static int hitungJumlahSimpul(){
+
+        int N = 0;
+        simpul bantu;
+        bantu = awal;
+        while(bantu != null){
+            N++;
+            bantu = bantu.kanan;
+        }
+        return(N);
+    }
+
+    public static void tambahTengah(){
+
+        System.out.print("Tentukan Lokasi Penambahan Data : ");
+        int LOKASI = in.nextInt();
+
+        int jumlahSimpulYangAda = hitungJumlahSimpul();
+
+        if(LOKASI == 1){
+            System.out.println("Lakukan penambahan di depan");
+        }else if (LOKASI > jumlahSimpulYangAda){
+            System.out.println("Lakukan penambahan di belakang");
+        }else{
+
+            String NAMA;
+        String ALAMAT;
+        int UMUR;
+        char JEKEL;
+        String HOBI[] = new String[3];
+        float IPK;
+        int bacaTombol = 0;
+        System.out.println("TAMBAH DEPAN : ");
+        System.out.print("Silahkan masukan nama Anda : ");
+        NAMA = in.next();
+        System.out.print("Silahkan masukan alamat Anda : ");
+        ALAMAT = in.next();
+        System.out.print("Silahkan masukan umur Anda : ");
+        UMUR = in.nextInt();
+        System.out.print("Silahkan masukan jenis kelamin Anda : ");
+        try{
+            bacaTombol = System.in.read();
+        }catch(java.io.IOException e){}
+        JEKEL = (char)bacaTombol;
+
+        System.out.println("Silahkan masukan hobi Anda maks-3");
+        for(int i = 0; i <= 3-1;i++){
+            System.out.print("hobi ke-"+i+" : ");
+            HOBI[i] = in.next();
+        }
+
+        System.out.print("Silahkan masukan IPK Anda : ");
+        IPK = in.nextFloat();
+
+        // -----  Bagian menentukan posisi yang dikehendaki  -----
+
+        simpul bantu;
+        bantu = awal;
+
+        int N = 1;
+
+        while((N < LOKASI - 1) && (bantu != akhir)){
+            bantu = bantu.kanan;
+            N++;
+        }
+
+        //----- Bagian menciptakan & mengisi simpul baru-----
+
+
+        simpul baru = new simpul();
+        baru.nama = NAMA;
+        baru.alamat = ALAMAT;
+        baru.umur = UMUR;
+        baru.jekel = JEKEL;
+        for(int i=0;i<=3-1;i++){
+            baru.hobi[i] = HOBI[i];
+        }
+        baru.ipk = IPK;
+    
+        //--------bagian mencangkokkan simpul baru ke dalam linkedlist lama------
+        bantu.kanan = baru;
+        baru.kanan = bantu.kanan;
+    
+    }
+
+    }
+
+
+    public static void hapus(){
+
+    if(awal == null) {// Jika senarai masih kosong
+
+    System.out.println("Senari kosong hapus tidak dapat dilakukan");
+     }else{ // Jika senarai tidak kosong!
+
+        System.out.println("Silahkan masukan nama yang ingin dihapus : ");
+        String namaCari = in.next();
+
+        if(awal ==  akhir) { //Jika hanya ada sebuah simpul
+            if(awal.nama.equals(namaCari)){
+                System.out.println("menghapus "+namaCari+" dilakukan");
+            }else
+            System.out.println("data "+namaCari+" tidak ditemukan!");
+        }else if (awal.nama.equals(namaCari)) { // jika nama ditemukan diawal
+            System.out.println("menghapus "+namaCari+" dilakukan");
+            awal = awal.kanan;
+        }else{
+         simpul bantu;
+         bantu = awal;
+         while(bantu.kanan.nama.equals(namaCari) == false){
+            bantu = bantu.kanan;
+         }
+         
+
+        }
+     }
+    
+    } 
+
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
         tambahDepan();
+        tambahDepan();
         tambahBelakang();
         tambahBelakang();
         tambahBelakang();
+        tambahBelakang();
+        tambahTengah();
         cetakSenarai();
     }
 }
