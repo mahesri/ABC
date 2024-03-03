@@ -10,6 +10,7 @@ class simpul{
     String hobi[] = new String[3];
     float ipk;
     simpul kanan;
+    simpul kiri;
 }
 
 public class doubleLinkedlist {
@@ -65,13 +66,22 @@ public class doubleLinkedlist {
         }
         baru.ipk = IPK;
 
-        if (awal == null) {
+        /*
+         * Bagian terpenting yang perlu dipahami adalah ini.
+         * Ini merupakan bagian untuk mencangkokan data.
+         * Ini merupakan proses menambahkan data baru kedalam rantai heap.
+         */
+
+        if (awal == null) { // Kondisi senarai awal masih kosong 
             awal = baru;
             akhir = baru;
+            baru.kiri = null;
             baru.kanan = null;
         }else{
             baru.kanan = awal;
+            awal.kiri = baru;
             awal = baru;
+            awal.kiri = null;
         }
 
             /*
@@ -312,11 +322,12 @@ public class doubleLinkedlist {
      }
     } 
 
+
+
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
-        
         tambahBelakang();
         tambahTengah();
         // hapus();
