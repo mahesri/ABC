@@ -25,12 +25,12 @@ public class Praktik4 {
             System.out.print(daftarMhs.get(i)+"\n");
         }
         System.out.println(" ");
-    }
 
+        
+    }
+    
     public static void main(String args[]){
 
     new Praktik4();     
-
     }
-
 }
