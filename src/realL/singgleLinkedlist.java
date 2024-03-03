@@ -1,4 +1,4 @@
-package realL;
+ package realL;
 
 import java.util.Scanner;
 
@@ -137,7 +137,6 @@ public class singgleLinkedlist {
             akhir.kanan = baru; //akhir sebelumnya diisi dengan data pertama yang diinputkan
             akhir = baru;
             baru.kanan = null;
-
         }    
     }
 
