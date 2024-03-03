@@ -12,7 +12,7 @@ class simpul{
     simpul kanan;
 }
 
-public class praktik1 {
+public class singgleLinkedlist {
 
     public static simpul awal;
     public static simpul akhir;
@@ -196,14 +196,15 @@ public class praktik1 {
             System.out.println("Lakukan penambahan di belakang");
         }else{
 
-            String NAMA;
+        String NAMA;
         String ALAMAT;
         int UMUR;
         char JEKEL;
         String HOBI[] = new String[3];
         float IPK;
         int bacaTombol = 0;
-        System.out.println("TAMBAH DEPAN : ");
+
+        System.out.println("TAMBAH TENGAH : ");
         System.out.print("Silahkan masukan nama Anda : ");
         NAMA = in.next();
         System.out.print("Silahkan masukan alamat Anda : ");
@@ -226,6 +227,7 @@ public class praktik1 {
         IPK = in.nextFloat();
 
         // -----  Bagian menentukan posisi yang dikehendaki  -----
+
 
         simpul bantu;
         bantu = awal;
@@ -283,14 +285,14 @@ public class praktik1 {
        
         }else{
         
-            simpul bantu;
+         simpul bantu;
          bantu = awal;
          
          while(bantu.kanan.nama.equals(namaCari) == false){
            
             bantu = bantu.kanan;
             if(bantu.kanan == null) break;
-            
+
          }
 
          if((bantu == akhir) && (akhir.nama.equals(namaCari) == false)){
@@ -314,14 +316,10 @@ public class praktik1 {
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
-        tambahDepan();
-        tambahDepan();
+        
         tambahBelakang();
-        tambahBelakang();
-        tambahBelakang();
-        tambahBelakang();
-        // tambahTengah();
-        hapus();
+        tambahTengah();
+        // hapus();
         cetakSenarai();
     }
 }
