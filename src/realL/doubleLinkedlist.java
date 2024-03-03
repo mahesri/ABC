@@ -69,7 +69,7 @@ public class doubleLinkedlist {
         /*
          * Bagian terpenting yang perlu dipahami adalah ini.
          * Ini merupakan bagian untuk mencangkokan data.
-         * Ini merupakan proses menambahkan data baru kedalam rantai heap.
+         * Ini merupakan proses menambahkan data baru kedalam simpul heap.
          */
 
         if (awal == null) { // Kondisi senarai awal masih kosong 
@@ -77,7 +77,7 @@ public class doubleLinkedlist {
             akhir = baru;
             baru.kiri = null;
             baru.kanan = null;
-        }else{
+        }else{      // Fokus on this
             baru.kanan = awal;
             awal.kiri = baru;
             awal = baru;
@@ -142,45 +142,17 @@ public class doubleLinkedlist {
         if (awal == null) {
             awal = baru;
             akhir = baru;
+            baru.kiri = null;
             baru.kanan = null;
         }else{
-            akhir.kanan = baru; //akhir sebelumnya diisi dengan data pertama yang diinputkan
+            baru.kiri = akhir;
+            akhir.kanan = baru;
             akhir = baru;
-            baru.kanan = null;
-
-        }    
+            akhir.kanan = null;
+    }    
     }
 
-    public static void cetakSenarai(){
-        if(awal == null){ //Jika senarai masih kosong
-            System.out.println("Maaf senarai masih kosong!");
-        }else{ // jika senarai tidak kosongk
-
-            System.out.println("---------------------------------------------------");
-            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
-            System.out.println("---------------------------------------------------");
-
-            simpul bantu;
-            bantu = awal;
-
-            while(bantu != null){
-                System.out.print(bantu.nama +"\t ");
-                System.out.print(bantu.alamat +"\t ");
-                System.out.print(bantu.umur +"\t ");
-                System.out.print(bantu.jekel +"\t ");
-                System.out.print(bantu.hobi[0] +"\t ");
-                System.out.print(bantu.hobi[1] +"\t ");
-                System.out.print(bantu.hobi[2] +"\t ");
-                System.out.println(bantu.ipk +"\t ");
-                bantu = bantu.kanan;
-            }
-
-            System.out.println("---------------------------------------------------");
-
-
-        }
-    }
-
+    
     public static int hitungJumlahSimpul(){
 
         int N = 0;
@@ -263,8 +235,15 @@ public class doubleLinkedlist {
         baru.ipk = IPK;
     
         //--------bagian mencangkokkan simpul baru ke dalam linkedlist lama------
-        bantu.kanan = baru;
-        baru.kanan = bantu.kanan;
+        
+        // Here
+
+        baru.kiri = bantu.kiri;
+        baru.kiri.kanan = baru;
+        baru.kanan = bantu;
+        bantu.kiri = baru;
+
+        // here  
     
     }
 
@@ -285,6 +264,7 @@ public class doubleLinkedlist {
            
             if(awal.nama.equals(namaCari)){
                 System.out.println("menghapus "+namaCari+" dilakukan");
+                inisialisasiSenaraiKosong();
             }else
             System.out.println("data "+namaCari+" tidak ditemukan!");
        
@@ -292,6 +272,7 @@ public class doubleLinkedlist {
            
             System.out.println("menghapus "+namaCari+" dilakukan");
             awal = awal.kanan;
+            awal.kiri = null;
        
         }else{
         
@@ -308,29 +289,89 @@ public class doubleLinkedlist {
          if((bantu == akhir) && (akhir.nama.equals(namaCari) == false)){
             
             System.out.println("data "+namaCari+" tidak ditemukan!");
-         }else if (akhir.nama.equals(namaCari)) { // jika nama tidak sitemukan diakhir
+         }else if (akhir.nama.equals(namaCari)) { // jika nama tidak ditemukan diakhir
            
-            bantu.kanan = null;
-            akhir = bantu;
+            akhir= bantu.kiri;
+            akhir.kanan = null;
 
          }else{
 
             System.out.println("menghapus "+namaCari+" dilakukan");
-            bantu.kanan = bantu.kanan.kanan;
+            bantu.kanan.kiri = bantu.kiri;
+            bantu.kiri.kanan = bantu.kanan;
          }
         }
      }
     } 
 
+    public static void cetakSenaraiMaju(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
 
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = awal;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kanan;
+            }
+
+            System.out.println("---------------------------------------------------");
+
+
+        }
+    }
+
+    public static void cetakSenarai(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = akhir;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kiri;
+            }
+
+            System.out.println("---------------------------------------------------");
+
+
+        }
+    }
 
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
         tambahBelakang();
-        tambahTengah();
-        // hapus();
-        cetakSenarai();
+        tambahBelakang();
+        tambahBelakang();
+        hapus();
+        cetakSenaraiMaju();
     }
 }
