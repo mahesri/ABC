@@ -15,7 +15,7 @@ public class User {
              * dieksekusi saat pembuatan objek (instance).
              */
 
-   private User (String username, String password){ // 'public User' merupakan konstruktornya || 'String username, String password' adalah 2 parameter yang diterima oleh konstruktor
+   public User (String username, String password){ // 'public User' merupakan konstruktornya || 'String username, String password' adalah 2 parameter yang diterima oleh konstruktor
 
         this.username = username; // Memasukan parameter username dan password yang kemudian diset kedalam anggota `username` dan 'password' menggunakan kata kunci 'this' ke dalam instance baru berdasarkan variableyang berada di objek.
         this.password = password;
