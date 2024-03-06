@@ -249,7 +249,6 @@ public class doubleLinkedlist {
 
     }
 
-
     public static void hapus(){
 
     if(awal == null) {// Jika senarai masih kosong
@@ -257,7 +256,7 @@ public class doubleLinkedlist {
     System.out.println("Senari kosong hapus tidak dapat dilakukan");
      }else{ // Jika senarai tidak kosong!
 
-        System.out.println("Silahkan masukan nama yang ingin dihapus : ");
+        System.out.print("Silahkan masukan nama yang ingin dihapus : ");
         String namaCari = in.next();
 
         if(awal ==  akhir) { //Jika hanya ada sebuah simpul
@@ -333,8 +332,8 @@ public class doubleLinkedlist {
 
         }
     }
-
-    public static void cetakSenarai(){
+    
+    public static void cetakSenaraiMundur(){
         if(awal == null){ //Jika senarai masih kosong
             System.out.println("Maaf senarai masih kosong!");
         }else{ // jika senarai tidak kosong
@@ -364,14 +363,39 @@ public class doubleLinkedlist {
         }
     }
 
+    public static void cetakMundur(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = akhir;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kiri;
+            }
+
+            System.out.println("---------------------------------------------------");
+        }
+    }
+
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
         tambahDepan();
-        tambahDepan();
-        tambahBelakang();
-        tambahBelakang();
-        tambahBelakang();
         hapus();
         cetakSenaraiMaju();
+        cetakSenaraiMundur();
     }
 }
