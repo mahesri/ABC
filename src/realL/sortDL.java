@@ -10,9 +10,10 @@ class simpul{
     String hobi[] = new String[3];
     float ipk;
     simpul kanan;
+    simpul kiri;
 }
 
-public class sortDL {
+public class sortDL{
 
     public static simpul awal;
     public static simpul akhir;
@@ -65,13 +66,22 @@ public class sortDL {
         }
         baru.ipk = IPK;
 
-        if (awal == null) {
+        /*
+         * Bagian terpenting yang perlu dipahami adalah ini.
+         * Ini merupakan bagian untuk mencangkokan data.
+         * Ini merupakan proses menambahkan data baru kedalam simpul heap.
+         */
+
+        if (awal == null) { // Kondisi senarai awal masih kosong 
             awal = baru;
             akhir = baru;
+            baru.kiri = null;
             baru.kanan = null;
-        }else{
+        }else{      // Fokus on this
             baru.kanan = awal;
+            awal.kiri = baru;
             awal = baru;
+            awal.kiri = null;
         }
 
             /*
@@ -132,44 +142,17 @@ public class sortDL {
         if (awal == null) {
             awal = baru;
             akhir = baru;
+            baru.kiri = null;
             baru.kanan = null;
         }else{
-            akhir.kanan = baru; //akhir sebelumnya diisi dengan data pertama yang diinputkan
+            baru.kiri = akhir;
+            akhir.kanan = baru;
             akhir = baru;
-            baru.kanan = null;
-        }    
+            akhir.kanan = null;
+    }    
     }
 
-    public static void cetakSenarai(){
-        if(awal == null){ //Jika senarai masih kosong
-            System.out.println("Maaf senarai masih kosong!");
-        }else{ // jika senarai tidak kosongk
-
-            System.out.println("---------------------------------------------------");
-            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
-            System.out.println("---------------------------------------------------");
-
-            simpul bantu;
-            bantu = awal;
-
-            while(bantu != null){
-                System.out.print(bantu.nama +"\t ");
-                System.out.print(bantu.alamat +"\t ");
-                System.out.print(bantu.umur +"\t ");
-                System.out.print(bantu.jekel +"\t ");
-                System.out.print(bantu.hobi[0] +"\t ");
-                System.out.print(bantu.hobi[1] +"\t ");
-                System.out.print(bantu.hobi[2] +"\t ");
-                System.out.println(bantu.ipk +"\t ");
-                bantu = bantu.kanan;
-            }
-
-            System.out.println("---------------------------------------------------");
-
-
-        }
-    }
-
+    
     public static int hitungJumlahSimpul(){
 
         int N = 0;
@@ -252,14 +235,163 @@ public class sortDL {
         baru.ipk = IPK;
     
         //--------bagian mencangkokkan simpul baru ke dalam linkedlist lama------
-        bantu.kanan = baru;
-        baru.kanan = bantu.kanan;
+        
+        // Here
+
+        baru.kiri = bantu.kiri;
+        baru.kiri.kanan = baru;
+        baru.kanan = bantu;
+        bantu.kiri = baru;
+
+        // here  
     
     }
 
     }
 
-    public static void tukarNilai(simpul x, simpul y){ //Fungsi untuk menukar data pada simpul
+    public static void hapus(){
+
+    if(awal == null) {// Jika senarai masih kosong
+
+    System.out.println("Senari kosong hapus tidak dapat dilakukan");
+     }else{ // Jika senarai tidak kosong!
+
+        System.out.print("Silahkan masukan nama yang ingin dihapus : ");
+        String namaCari = in.next();
+
+        if(awal ==  akhir) { //Jika hanya ada sebuah simpul
+           
+            if(awal.nama.equals(namaCari)){
+                System.out.println("menghapus "+namaCari+" dilakukan");
+                inisialisasiSenaraiKosong();
+            }else
+            System.out.println("data "+namaCari+" tidak ditemukan!");
+       
+        }else if (awal.nama.equals(namaCari)) { // jika nama ditemukan diawal
+           
+            System.out.println("menghapus "+namaCari+" dilakukan");
+            awal = awal.kanan;
+            awal.kiri = null;
+       
+        }else{
+        
+         simpul bantu;
+         bantu = awal;
+         
+         while(bantu.kanan.nama.equals(namaCari) == false){
+           
+            bantu = bantu.kanan;
+            if(bantu.kanan == null) break;
+
+         }
+
+         if((bantu == akhir) && (akhir.nama.equals(namaCari) == false)){
+            
+            System.out.println("data "+namaCari+" tidak ditemukan!");
+         }else if (akhir.nama.equals(namaCari)) { // jika nama tidak ditemukan diakhir
+           
+            akhir= bantu.kiri;
+            akhir.kanan = null;
+
+         }else{
+
+            System.out.println("menghapus "+namaCari+" dilakukan");
+            bantu.kanan.kiri = bantu.kiri;
+            bantu.kiri.kanan = bantu.kanan;
+         }
+        }
+     }
+    } 
+
+    public static void cetakSenaraiMaju(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = awal;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kanan;
+            }
+
+            System.out.println("---------------------------------------------------");
+
+
+        }
+    }
+    
+    public static void cetakSenaraiMundur(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = akhir;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kiri;
+            }
+
+            System.out.println("---------------------------------------------------");
+
+
+        }
+    }
+
+    public static void cetakMundur(){
+        if(awal == null){ //Jika senarai masih kosong
+            System.out.println("Maaf senarai masih kosong!");
+        }else{ // jika senarai tidak kosong
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("NO      NAMA     ALAMAT     UMUR     JEKEL      IPK");
+            System.out.println("---------------------------------------------------");
+
+            simpul bantu;
+            bantu = akhir;
+
+            while(bantu != null){
+                System.out.print(bantu.nama +"\t ");
+                System.out.print(bantu.alamat +"\t ");
+                System.out.print(bantu.umur +"\t ");
+                System.out.print(bantu.jekel +"\t ");
+                System.out.print(bantu.hobi[0] +"\t ");
+                System.out.print(bantu.hobi[1] +"\t ");
+                System.out.print(bantu.hobi[2] +"\t ");
+                System.out.println(bantu.ipk +"\t ");
+                bantu = bantu.kiri;
+            }
+
+            System.out.println("---------------------------------------------------");
+        }
+    }
+
+    public static void tukarNilai(simpul x, simpul y){
 
         simpul sementara = new simpul();
     
@@ -304,19 +436,17 @@ public class sortDL {
     simpul berhenti = akhir.kanan;
     
     System.out.println("Banyaknya simpul = "+ hitungJumlahSimpul());
-    for(int i = 1; i<= hitungJumlahSimpul()-1;i++){
+    for(int i = 1; i <= hitungJumlahSimpul()-1;i++){
     
         A = awal;
         B = awal.kanan;
         int nomor = 1;
-
     while(B != berhenti){
         if(A.nama.compareTo(B.nama)>0){
             // Tukarkan elemen dari simpul A dan elemen dari simpul B
             tukarNilai(A,B);
         }
         A = A.kanan;
-        System.out.println(A.kanan.nama);
         B = B.kanan;
         nomor++;
     }
@@ -325,58 +455,6 @@ public class sortDL {
     System.out.println("===PROSES PENGURUTAN BUBBLE SELESAI======");
     
     }
-
-
-    public static void hapus(){
-
-    if(awal == null) {// Jika senarai masih kosong
-
-    System.out.println("Senari kosong hapus tidak dapat dilakukan");
-     }else{ // Jika senarai tidak kosong!
-
-        System.out.println("Silahkan masukan nama yang ingin dihapus : ");
-        String namaCari = in.next();
-
-        if(awal ==  akhir) { //Jika hanya ada sebuah simpul
-           
-            if(awal.nama.equals(namaCari)){
-                System.out.println("menghapus "+namaCari+" dilakukan");
-            }else
-            System.out.println("data "+namaCari+" tidak ditemukan!");
-       
-        }else if (awal.nama.equals(namaCari)) { // jika nama ditemukan diawal
-           
-            System.out.println("menghapus "+namaCari+" dilakukan");
-            awal = awal.kanan;
-       
-        }else{
-        
-         simpul bantu;
-         bantu = awal;
-         
-         while(bantu.kanan.nama.equals(namaCari) == false){
-           
-            bantu = bantu.kanan;
-            if(bantu.kanan == null) break;
-
-         }
-
-         if((bantu == akhir) && (akhir.nama.equals(namaCari) == false)){
-            
-            System.out.println("data "+namaCari+" tidak ditemukan!");
-         }else if (akhir.nama.equals(namaCari)) { // jika nama tidak sitemukan diakhir
-           
-            bantu.kanan = null;
-            akhir = bantu;
-
-         }else{
-
-            System.out.println("menghapus "+namaCari+" dilakukan");
-            bantu.kanan = bantu.kanan.kanan;
-         }
-        }
-     }
-    } 
 
     public static void main(String[]args){
         inisialisasiSenaraiKosong();
@@ -390,11 +468,8 @@ public class sortDL {
         tambahBelakang();
         tambahBelakang();
         tambahBelakang();
-        hitungJumlahSimpul();
-        tukarNilai(awal, akhir);
         mengurutkanDataBubble_TeknikTukarNilai();
-        // tambahTengah();
-        // hapus();
-        cetakSenarai();
+        cetakSenaraiMaju();
+        cetakSenaraiMundur();
     }
 }
