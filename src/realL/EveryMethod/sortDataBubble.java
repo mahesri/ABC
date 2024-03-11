@@ -48,7 +48,7 @@ simpul B = null;
 simpul berhenti = akhir.kanan;
 
 System.out.println("Banyaknya simpul = "+ hitungJumlahSimpul());
-for(int i){
+for(int i = 1; i <= hitungJumlahSimpul()-1;i++){
 
 	A = awal;
 	B = awal.kanan;
