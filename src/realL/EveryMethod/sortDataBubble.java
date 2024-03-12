@@ -1,5 +1,7 @@
 package realL.EveryMethod;
 // Fungsi pengurutan isi elemen heap / elemen simpul
+// Fungsi ini untuk merubah isi dari sebuah heap dengan teknik bubble sort
+// Fungsi ini bisa untuk singgle linkedlist maupun double
 
 public class sortDataBubble {
 
