@@ -433,7 +433,7 @@ public class sortDL{
     int N = hitungJumlahSimpul();
     simpul A = null;
     simpul B = null;
-    simpul berhenti = akhir.kanan;
+    simpul berhenti = akhir.kanan; // Tolak ukur nilai true dalam perulangan while
     
     System.out.println("Banyaknya simpul = "+ hitungJumlahSimpul());
     for(int i = 1; i <= hitungJumlahSimpul()-1;i++){
@@ -441,16 +441,28 @@ public class sortDL{
         A = awal;
         B = awal.kanan;
         int nomor = 1;
-    while(B != berhenti){
+
+    while(B != berhenti){ // while akan berhenti ketika B == berhenti atau akhir.kanan yang bernilai null
+        
         if(A.nama.compareTo(B.nama)>0){
             // Tukarkan elemen dari simpul A dan elemen dari simpul B
             tukarNilai(A,B);
         }
+
         A = A.kanan;
         B = B.kanan;
         nomor++;
+        System.out.println(nomor);
     }
-    berhenti = A;
+
+
+    berhenti = A; // Merubah A sebagai pembanding agar while berhenti. 
+
+    /*
+     * Pada iterasi while pertama while akan berhenti apabila B == akhir.kanan dan ketika berhenti akan juga mendeklarasikan berhenti = A.
+     * Pada iterasi ke-2 while hanya akan berhenti apabila B == A diiterasi pertama, selain itu akan terus dicek
+     */
+
     }
     System.out.println("===PROSES PENGURUTAN BUBBLE SELESAI======");
     
@@ -460,16 +472,10 @@ public class sortDL{
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
-        tambahDepan();
-        tambahDepan();
-        tambahDepan();
-        tambahBelakang();
-        tambahBelakang();
-        tambahBelakang();
         tambahBelakang();
         tambahBelakang();
         mengurutkanDataBubble_TeknikTukarNilai();
         cetakSenaraiMaju();
-        cetakSenaraiMundur();
+        // cetakSenaraiMundur();
     }
 }
