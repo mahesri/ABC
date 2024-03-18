@@ -453,6 +453,13 @@ public class sortDL{
         B = B.kanan;
         nomor++;
         System.out.println(nomor);
+        
+        // if (A.kanan.nama != null) {
+        //     System.out.println(A.kanan.nama);
+        // }else{
+        //     break;
+        // }
+        
     }
 
 
