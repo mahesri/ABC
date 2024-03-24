@@ -268,7 +268,7 @@ public class bubbleSort_LL_tukarHeap {
         simpul berhenti = akhir.kanan;
         int nomor = 1;
 
-        for(int i = 1; i <+ hitungJumlahSimpul()-1;i++){
+        for(int i = 1; i <= hitungJumlahSimpul()-1;i++){
             // for(int i =1; i<=4;i++) ??
             A = awal;
             B = awal.kanan;
@@ -288,6 +288,7 @@ public class bubbleSort_LL_tukarHeap {
 
                 A = bantu.kanan;
                 B = bantu.kanan.kanan;
+
                 if(A.nama.compareTo(B.nama)>0){
 
                     // tukarkan simpul A dan B
@@ -295,11 +296,16 @@ public class bubbleSort_LL_tukarHeap {
                     B.kanan = A;
                     bantu.kanan = B;
                     if(B==akhir) akhir = A;
+                    System.out.println(akhir.nama+" \t"+B.nama);
                 }
-                
-            }
-        }
 
+                bantu = bantu.kanan;
+                nomor++;
+            }
+            berhenti = bantu.kanan;;
+            System.out.println("X");
+        }
+        System.out.println("===PROSES PENGURUTAN BUBBLE SELESAI======");
     }
 
     public static void hapus(){
@@ -357,10 +363,13 @@ public class bubbleSort_LL_tukarHeap {
         inisialisasiSenaraiKosong();
         tambahDepan();
         tambahDepan();
-        
         tambahBelakang();
-        tambahTengah();
+        tambahBelakang();
+        // tambahTengah();
         // hapus();
+
+        cetakSenarai();
+        mengurutkanDataBubble_TeknikTukarHeap();
         cetakSenarai();
     }
 }
