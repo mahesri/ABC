@@ -281,8 +281,10 @@ public class bubbleSort_LL_tukarHeap {
                 B.kanan = A;
                 awal = B; 
             }
+
             // proses banding tukar data ke-2 dengan sebelahnya dan seterusnya.
             nomor++; 
+            System.out.println("Nomor outside while ="+nomor);
             bantu = awal;
             while(bantu.kanan.kanan != berhenti){
 
@@ -290,20 +292,22 @@ public class bubbleSort_LL_tukarHeap {
                 B = bantu.kanan.kanan;
 
                 if(A.nama.compareTo(B.nama)>0){
-
+                    System.out.println("X-ud");
                     // tukarkan simpul A dan B
                     A.kanan = B.kanan;
                     B.kanan = A;
                     bantu.kanan = B;
                     if(B==akhir) akhir = A;
                     System.out.println(akhir.nama+" \t"+B.nama);
+                    System.out.println("Nomor inside while & inside if = "+nomor);
                 }
 
                 bantu = bantu.kanan;
                 nomor++;
+                System.out.println("Nomor = "+nomor);
             }
             berhenti = bantu.kanan;;
-            System.out.println("X");
+            System.out.println("------------------");
         }
         System.out.println("===PROSES PENGURUTAN BUBBLE SELESAI======");
     }
