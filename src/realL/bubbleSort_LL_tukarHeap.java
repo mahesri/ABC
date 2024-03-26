@@ -274,7 +274,6 @@ public class bubbleSort_LL_tukarHeap {
             B = awal.kanan;
             nomor = 1;
 
-
             // proses banding tukar, khusus simpul pertama dngan sebelahnya
             if(A.nama.compareTo(B.nama)>0){
                 A.kanan = B.kanan; // proses switching heap pertana dan kedua
