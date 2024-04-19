@@ -1,17 +1,10 @@
-# ABC or Always Be Coding is a program to ensure that Mahesri is always learn about coding.
+# Always Be Coding.
 
-The purpose of we make this repository is, we want to make a documentation and also we want to make sure that mahesri is learn about code.
+This repo contains documentation for learning algorithms and programming using Java. These learning and understanding objectives are listed below.
 
-## Rule off every file on this repo atleast having :
-1. Explaination on every parts.
-2. Every folder should be neat.
-3. Every important technique must be separate on every folder.
+Feel free to explore this repo. However some documentation is explained in Bahasa.
 
-## I believe you can do this Mahesri. You're big boy now! Do your best.
-
-![keep-spirit-from-livia](assets/01-keep-spirit.jpg)
-
-One of my target is i want to learn about structure data, and they are include :
+The objectives in this documentation include studying: :
 
 - [X] Array
 - [ ] Array multidimentional
@@ -43,4 +36,4 @@ One of my target is i want to learn about structure data, and they are include :
 - [ ] Tree 
 - [ ] Hashing
 
-# You can do it! You have strength from him.
+## A$AP
